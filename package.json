@@ -15,16 +15,6 @@
     "configuration": {
       "title": "Get This!",
       "properties": {
-        "getthis.shellConfigAccess": {
-          "type": "boolean",
-          "default": false,
-          "description": "Allow the Get This! extension to store the 'THIS' environment variable in the user's shell configs. UNIX/Linux only - has no effect on Windows."
-        },
-        "getthis.showActiveEditorWarning": {
-          "type": "boolean",
-          "default": false,
-          "description": "Show a warning when switching to a tab that isn't an editor, e.g. the Settings tab."
-        }
       }
     }
   },
