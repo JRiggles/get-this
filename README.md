@@ -1,4 +1,4 @@
-<img src="src/icons/icon-512.png">
+<img src="icons/icon-512.png">
 
 ### What does this extension do?
 
