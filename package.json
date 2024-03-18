@@ -2,6 +2,7 @@
   "name": "get-this",
   "displayName": "Get This!",
   "description": "Get the active editor's file path as an environment variable 'THIS' for use in the terminal",
+  "publisher": "JRiggles",
   "icon": "icons/icon-192.png",
   "repository": {
     "type": "git",
