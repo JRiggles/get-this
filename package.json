@@ -2,6 +2,11 @@
   "name": "get-this",
   "displayName": "Get This!",
   "description": "Get the active editor's file path as an environment variable 'THIS' for use in the terminal",
+  "icon": "icons/icon-192.png",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JRiggles/get-this"
+  },
   "version": "0.0.1",
   "engines": {
     "vscode": "^1.87.0"
@@ -9,13 +14,14 @@
   "categories": [
     "Other"
   ],
-  "activationEvents": ["onStartupFinished"],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
   "main": "./out/extension.js",
   "contributes": {
     "configuration": {
       "title": "Get This!",
-      "properties": {
-      }
+      "properties": {}
     }
   },
   "scripts": {
