@@ -1,4 +1,4 @@
-<img src="icons/icon-512.png">
+<img src="https://raw.githubusercontent.com/JRiggles/get-this/main/icons/icon-512.png">
 
 ### What does this extension do?
 
