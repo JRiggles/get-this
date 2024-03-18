@@ -1,7 +1,5 @@
 import * as vscode from "vscode";
 
-// TODO: showActiveEditorWarning config stuff
-
 
 export function activate(_context: vscode.ExtensionContext) {
 	const editor = vscode.window.activeTextEditor;
@@ -59,7 +57,8 @@ function updateIntegratedTerminalEnv(thisFilePath: string) {
 		default:
 			vscode.window.showErrorMessage(`Get This! Unsupported platform: ${platform}`);
 			return;
-		}
+	}
+	
 	console.log(`Get This! set ${terminalPlatform} THIS`);
 	let workspaceConfig = vscode.workspace.getConfiguration();
 	let terminalConfig = workspaceConfig.get<any>(terminalPlatform, {});
