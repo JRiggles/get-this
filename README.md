@@ -1,71 +1,99 @@
-# get-this README
+# Get This!
 
-This is the README for your extension "get-this". After writing up a brief description, we recommend including the following sections.
+### What does this extension do?
 
-## Features
+**Get This!** watches for changes to your active editor tab and will set an environment variable named `THIS` (in the integrated terminal) to the path of the active file.
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+### Why?
 
-For example if there is an image subfolder under your extension project workspace:
+Now whenever you switch editor tabs, you'll have access to the active file's path in the integrated terminal without having to...
 
-\!\[feature X\]\(images/feature-x.png\)
+- right-click on the file in the sidebar and select "Open in Integrated Terminal"
+- right-click on the file in the sidebar and select "Copy Path" or "Copy Relative Path"
+- cd out of your current working directory to work with a different file path
+- open another terminal
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+Instead, you can simply use the environment variable: `THIS`
+
+### How?
+
+Once installed, **Get This!** starts up automatically with VS Code.
+
+To use it, simply open a new integrated terminal window and use `THIS` like any other environment variable, e.g.:
+
+***Mac OS, Linux***
+```bash
+echo $THIS
+```
+
+***Windows***
+```cmd
+echo %THIS%
+```
+
+### How, specifically?
+
+Specifically, **Get This!** sets the following configuration in your global `settings.json` file:
+
+***Mac OS***
+```JSON
+"terminal.integrated.env.osx": {
+    "THIS": "<path to most recently active editor>"
+}
+```
+
+***Windows***
+```JSON
+"terminal.integrated.env.windows": {
+    "THIS": "<path to most recently active editor>"
+}
+```
+
+***Linux***
+```JSON
+"terminal.integrated.env.linux": {
+    "THIS": "<path to most recently active editor>"
+}
+```
+This configuration is updated whenver you change your active editor to a tab with a valid file in it.
+> Don't worry, if you happen to have any other evnironment variables already set in `terminal.integrated.env`, **Get This!** will leave them alone (unless you happen to have one named `THIS`)
+
+## Tips and Tricks
+
+- `THIS` is **case-sensitive**, so remember to use all caps! `$this` won't work, but `$THIS` will
+- If `THIS` seems like it's stuck on a previous file path, close the integrated terminal and reopen it
+<br/>(looking for a better solution for this...)
+- `THIS` only exists in VS Code's integrated terminal, so you won't be able to access it from an external terminal, i.e. your OS's terminal
+- The value of `THIS` is updated as soon as an editor tab with a valid file path is selected, so if you're opening VS Code it will update to the path of any restored editor tab as well
+- The most recent value of `THIS` is stored in your global `settings.json`
+- **Get This!** only updates `THIS` if the file in the active editor has been saved - it doesn't work on new "Untitled" files
 
 ## Requirements
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+**Get This!** has been developed and tested on...
+> Visual Studio Code
+<br/> Version: 1.87.2 (Universal)
+<br/> Commit: 863d2581ecda6849923a2118d93a088b0745d9d6
+<br/> Date: 2024-03-08T15:21:31.043Z
+<br/> Electron: 27.3.2
+<br/> ElectronBuildId: 26836302
+<br/> Chromium: 118.0.5993.159
+<br/> Node.js: 18.17.1
+<br/> V8: 11.8.172.18-electron.0
+<br/> OS: Darwin arm64 23.3.0
+
+but is designed to run on Mac OS, Windows and Linux and should work with most versions of VS Code
 
 ## Extension Settings
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
-
-For example:
-
-This extension contributes the following settings:
-
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
+None...yet?
 
 ## Known Issues
 
-Calling out known issues can help limit users opening duplicate issues against your extension.
+None so far!
 
 ## Release Notes
 
-Users appreciate release notes as you update your extension.
+### 0.0.1
 
-### 1.0.0
-
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
-
----
-
-## Following extension guidelines
-
-Ensure that you've read through the extensions guidelines and follow the best practices for creating your extension.
-
-* [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
-
-## Working with Markdown
-
-You can author your README using Visual Studio Code. Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux).
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux).
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets.
-
-## For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+Initial development of **Get This!**
