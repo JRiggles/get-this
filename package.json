@@ -4,10 +4,17 @@
   "description": "Get the active editor's file path as an environment variable 'THIS' for use in the terminal",
   "publisher": "JRiggles",
   "icon": "icons/icon-192.png",
+  "galleryBanner": {
+    "color": "#4069f5",
+    "theme": "light"
+  },
+  "homepage": "https://github.com/JRiggles/get-this/blob/main/README.md",
+  "bugs.url": "https://github.com/JRiggles/get-this/issues",
   "repository": {
     "type": "git",
     "url": "https://github.com/JRiggles/get-this"
   },
+  "license": "MIT",
   "version": "0.0.1",
   "engines": {
     "vscode": "^1.87.0"
